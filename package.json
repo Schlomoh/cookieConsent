@@ -2,11 +2,10 @@
   "name": "@schlomoh/react-cookieconsent",
   "version": "1.0.4",
   "description": "cookie banner written in typescript and react",
-  "main": "_babelOut/index.js",
-  "type": "module",
-  "types": "_babelOut/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "_babelOut",
+    "dist",
     "README.md"
   ],
   "repository": {
@@ -14,10 +13,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve",
-    "transpile": "babel src/react-cookieConsent -d _babelOut --copy-files --extensions '.tsx'",
+    "serve": "webpack serve",
+    "transpile": "rm -rfd _babelOut && babel src/reactCookieConsent -d _babelOut --copy-files --extensions '.tsx'",
     "typecheck": "rm -rfd _tsOut && tsc",
-    "build": "rm -rfd _babelOut/ && mkdir _babelOut && npm run typecheck && mv _tsOut/react-cookieConsent/* _babelOut && rm -rfd _tsOut && npm run transpile",
+    "build": "rm -rfd dist && mkdir dist && npm run typecheck && npm run transpile && mv _tsOut/react-cookieConsent/* dist && mv _babelOut/* dist && rm -rfd _babelOut _tsOut",
     "prepublishOnly": "npm run build"
   },
   "author": "schlomoh - moritz becker",
@@ -34,7 +33,9 @@
     "@types/react-dom": "^17.0.14",
     "@types/styled-components": "^5.1.24",
     "babel-loader": "^8.2.4",
+    "babel-preset-minify": "^0.5.1",
     "css-loader": "^6.7.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "html-webpack-plugin": "^5.5.0",
     "ts-loader": "^9.2.8",
     "typescript": "^4.6.3",

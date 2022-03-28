@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { render } from "react-dom";
-import Main from "./App";
+import Main from "./app";
 
 render(
   <StrictMode>

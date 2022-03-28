@@ -1,9 +1,10 @@
-import { CookieConsent } from "./react-cookieConsent";
+import { CookieConsent } from "./reactCookieConsent";
 
 const Main = () => {
+  const CookieInfoContent = () => <p>this site uses Cookies</p>;
   return (
     <main>
-      <CookieConsent />
+      <CookieConsent infoContent={<CookieInfoContent />} type="modal" />
     </main>
   );
 };

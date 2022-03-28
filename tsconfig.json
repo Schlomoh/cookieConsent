@@ -18,7 +18,7 @@
     "forceConsistentCasingInFileNames": true,
     "sourceMap": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "baseUrl": "src/react-cookieConsent",
+    "baseUrl": "src/reactCookieConsent",
     "outDir": "_tsOut"
   },
   "include": ["src/"],
