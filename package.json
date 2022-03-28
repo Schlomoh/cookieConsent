@@ -1,6 +1,6 @@
 {
   "name": "@schlomoh/react-cookieconsent",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "cookie banner written in typescript and react",
   "main": "_babelOut/index.js",
   "type": "module",
