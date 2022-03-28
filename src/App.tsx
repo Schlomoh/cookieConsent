@@ -1,9 +1,9 @@
-import { CookieBanner } from "./lib";
+import { CookieConsent } from "./react-cookieConsent";
 
 const Main = () => {
   return (
     <main>
-      <CookieBanner />
+      <CookieConsent />
     </main>
   );
 };

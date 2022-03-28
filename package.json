@@ -1,8 +1,10 @@
 {
   "name": "@schlomoh/react-cookieconsent",
-  "version": "1.1.1",
+  "version": "1.0.2",
   "description": "cookie banner written in typescript and react",
   "main": "dist/index.js",
+  "type": "module",
+  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "README.md"
@@ -13,8 +15,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve",
-    "transpile": "rm -rfd dist && babel src/lib -d dist --copy-files --extensions '.tsx'",
-    "prepublishOnly": "npm run transpile"
+    "transpile": "babel src/react-cookieConsent -d _babelOut --copy-files --extensions '.tsx'",
+    "typecheck": "rm -rfd _tsOut && tsc",
+    "build": "rm -rfd _babelOut/ && mkdir _babelOut && npm run typecheck && mv _tsOut/react-cookieConsent/* _babelOut && rm -rfd _tsOut && npm run transpile",
+    "prepublishOnly": "npm run build"
   },
   "author": "schlomoh - moritz becker",
   "license": "ISC",

@@ -1,22 +1,26 @@
 {
-    "compilerOptions": {
-      "esModuleInterop": true,
-      "module": "esnext",
-      "target": "es5",
-      "moduleResolution": "node",
-      "jsx": "react-jsx",
-      "strict": true,
-      "noEmit": false,
-      "allowJs": true,
-      "skipLibCheck": true,
-      "isolatedModules": true,
-      "resolveJsonModule": true,
-      "noFallthroughCasesInSwitch": true,
-      "allowSyntheticDefaultImports": true,
-      "forceConsistentCasingInFileNames": true,
-      "sourceMap": true,
-      "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    },
-    "include": ["src", "src/*"],
-    "exclude": ["node_modules"]
-}  
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "module": "esnext",
+    "target": "es5",
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "strict": true,
+    "isolatedModules": true,
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "noEmit": false,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "baseUrl": "src/react-cookieConsent",
+    "outDir": "_tsOut"
+  },
+  "include": ["src/"],
+  "exclude": ["node_modules"]
+}

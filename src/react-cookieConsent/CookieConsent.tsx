@@ -9,7 +9,7 @@ const Container = styled.div`
   font-family: sans-serif;
 `;
 
-const CookieBanner = () => {
+const CookieConsent = (props : ICookieConsentProps) => {
   return (
     <Container>
       <h3>We are using cookies on this site to improve your user experience</h3>
@@ -18,4 +18,4 @@ const CookieBanner = () => {
   );
 };
 
-export default CookieBanner;
+export default CookieConsent;
