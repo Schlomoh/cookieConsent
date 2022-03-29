@@ -16,7 +16,7 @@
     "serve": "webpack serve",
     "transpile": "rm -rfd _babelOut && babel src/reactCookieConsent -d _babelOut --copy-files --extensions '.tsx'",
     "typecheck": "rm -rfd _tsOut && tsc",
-    "build": "rm -rfd dist && mkdir dist && npm run typecheck && npm run transpile && mv _tsOut/react-cookieConsent/* dist && mv _babelOut/* dist && rm -rfd _babelOut _tsOut",
+    "build": "rm -rfd dist && mkdir dist && npm run typecheck && npm run transpile && mv _tsOut/reactCookieConsent/* dist && mv _babelOut/* dist && rm -rfd _babelOut _tsOut",
     "prepublishOnly": "npm run build"
   },
   "author": "schlomoh - moritz becker",
