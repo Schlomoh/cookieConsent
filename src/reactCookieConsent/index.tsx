@@ -1,3 +1,3 @@
-import CookieConsent from "./cookieConsent";
+import CookieModal from "./cookieConsent";
 
-export { CookieConsent };
+export { CookieModal };

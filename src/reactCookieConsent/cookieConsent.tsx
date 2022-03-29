@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 // types
 // import { ICookieConsentProps } from "CookieConsent.d";
@@ -47,7 +47,17 @@ const BaseButton = styled.button<IBaseButtonProps>`
     props.backgroundColor ? props.backgroundColor : "#ccc"};
 `;
 
-const CookieConsent = (props: ICookieConsentProps) => {
+const TextWrapper = styled.span<ITextProps>`
+  h3 {
+    color: ${(props) => (props.headingColor ? props.headingColor : "black")};
+  }
+
+  p {
+    color: ${(props) => (props.paragraphColor ? props.paragraphColor : "grey")};
+  }
+`;
+
+const CookieModal = (props: ICookieConsentProps) => {
   const {
     containerStyle,
     primaryButtonStyle,
@@ -84,6 +94,7 @@ const CookieConsent = (props: ICookieConsentProps) => {
         </p>
       </>
     );
+
   const [show, setShow] = useState(false);
   const [showMangeView, setShowManageView] = useState(false);
 
@@ -155,7 +166,7 @@ const CookieConsent = (props: ICookieConsentProps) => {
   const ManagementView = () => {
     return (
       <>
-      <BaseButton onClick={toggleManageView}>Back</BaseButton>
+        <BaseButton onClick={toggleManageView}>Back</BaseButton>
         {managementContent}
         <ButtonGroup showManageButton={false} />
       </>
@@ -167,10 +178,12 @@ const CookieConsent = (props: ICookieConsentProps) => {
   return (
     <Backdrop show={show}>
       <Container style={containerStyle}>
-        <View />
+        <TextWrapper>
+          <View />
+        </TextWrapper>
       </Container>
     </Backdrop>
   );
 };
 
-export default CookieConsent;
+export default CookieModal;

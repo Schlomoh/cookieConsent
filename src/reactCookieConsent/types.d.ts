@@ -1,6 +1,12 @@
 type TBackgroundColor = React.CSSProperties["backgroundColor"];
-interface ICookieConsentProps {
-  type: "modal" | "banner";
+type TColor = React.CSSProperties["color"];
+
+interface ITextProps {
+  headingColor?: TColor;
+  paragraphColor?: TColor;
+}
+
+interface ICookieConsentProps extends ITextProps {
   onAccept?: () => void;
   acceptButtonText?: string;
   onDecline?: () => void;
