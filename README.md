@@ -1,13 +1,24 @@
-# cookieConsent
+# React-cookieConsent
 
 ## This cookie consent react component aims to provide a fully customizable banner or modal to be displayed once your site is visited
 
 ##### Currently the modal is the only available type.
 #
 
+[![NPM](https://nodei.co/npm/@schlomoh/react-cookiConsent.png?compact=true)](https://nodei.co/npm/@schlomoh/react-cookieConsent/)
+
+[![NPM](https://nodei.co/npm-dl/@schlomoh/react-cookiConsent.png?months=1)](https://nodei.co/npm/@schlomoh/react-cookieConsent/)
+
+
+![Downloads](https://img.shields.io/npm/v/@schlomoh/react-cookieconsent)
+## Installation 
+```shell
+npm install @schlomoh/react-cookieConsent
+```
+
 ## Usage
 
-```
+```jsx
 import {CookieConsent} from '@schlomoh/react-cookieConsent'
 
 const MyApp = () => (
@@ -20,5 +31,6 @@ const MyApp = () => (
 
 You can choose to give the option of customizing cookie preferences by enabling the 'managementView' by setting the property ```enableManagement = {true}```.
 
-### Example
+## Appearance
+### Default
 ![example](https://github.com/schlomoh/cookieConsent/blob/main/doc-assets/cookieBannerExample.png?raw=true)
