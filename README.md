@@ -7,8 +7,6 @@
 
 ![Downloads](https://img.shields.io/npm/v/@schlomoh/react-cookieconsent)
 
-[![NPM](https://nodei.co/npm/@schlomoh/react-cookiConsent.png?compact=true)](https://nodei.co/npm/@schlomoh/react-cookieConsent/)
-
 [![NPM](https://nodei.co/npm-dl/@schlomoh/react-cookiConsent.png?months=1)](https://nodei.co/npm/@schlomoh/react-cookieConsent/)
 
 

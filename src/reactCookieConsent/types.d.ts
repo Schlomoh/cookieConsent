@@ -1,35 +1,48 @@
-type TBackgroundColor = React.CSSProperties["backgroundColor"];
-type TColor = React.CSSProperties["color"];
+type TCss = React.CSSProperties;
+
+type TBackgroundColor = Tcss["backgroundColor"];
+type TColor = TCss["color"];
+type TFlexDirection = TCss["flexDirection"];
+type TJustify = TCss["justifyContent"];
+type TAlign = TCss["alignItems"];
 
 interface ITextProps {
   headingColor?: TColor;
   paragraphColor?: TColor;
 }
 
-interface ICookieConsentProps extends ITextProps {
-  onAccept?: () => void;
+interface IButtonTexts {
   acceptButtonText?: string;
-  onDecline?: () => void;
   declineButtonText?: string;
-  infoContent?: JSX.Element;
-  managementContent?: JSX.Element;
-  enableManagement?: boolean;
   managementButtonText?: string;
-  accentColor?: TBackgroundColor;
-  containerStyle?: React.CSSProperties;
+}
+
+interface IButtonStyle {
   primaryButtonStyle?: React.CSSProperties;
   secondaryButtonStyle?: React.CSSProperties;
 }
 
+interface ICookieConsentProps extends ITextProps, IButtonTexts, IButtonStyle {
+  onAccept?: () => void;
+  onDecline?: () => void;
+  infoContent?: JSX.Element;
+  managementContent?: JSX.Element;
+  enableManagement?: boolean;
+  accentColor?: TBackgroundColor;
+  containerStyle?: React.CSSProperties;
+}
+
+interface IViewProps extends ICookieConsentProps {
+  setShow: Dispatch<SetStateAction<boolean>>;
+  type: "banner" | "modal";
+}
+
 interface IBaseButtonProps {
   backgroundColor?: TBackgroundColor;
+  small?: boolean;
 }
 
 type TButtonClickCallback = (() => void) | undefined;
-
-type TFlexDirection = React.CSSProperties["flexDirection"];
-type TJustify = React.CSSProperties["justifyContent"];
-type TAlign = React.CSSProperties["alignItems"];
 
 interface IFlexDivProps {
   flexDirection?: TFlexDirection;
@@ -37,6 +50,17 @@ interface IFlexDivProps {
   align?: TAlign;
 }
 
-interface IBackdropProps {
+interface IAnimatedContainerProps {
   show: boolean;
+}
+
+interface IButtonGroupProps extends IButtonTexts, IButtonStyle {
+  callbacks: {
+    accept: () => void;
+    decline: () => void;
+  };
+  toggleManageViewCallback: () => void;
+  enableManagement?: boolean;
+  accentColor?: TBackgroundColor;
+  direction: "column" | "row";
 }
