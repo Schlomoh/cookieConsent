@@ -1,30 +1,23 @@
 import { CookieModal, CookieBanner } from "./reactCookieConsent";
 
 const Main = () => {
-  const CookieInfoContent = () => (
-    <>
-      <h3>This site uses Cookies</h3>
-      <p>
-        To improve the performance and user experience, this site uses cookies
-        and shares user data with third-party services.
-      </p>
-    </>
-  );
-
   const containerStyle = {
     background: "rgb(30,30,30)",
-    boxShadow: 'unset'
+    boxShadow: "unset",
   } as React.CSSProperties;
+
+  function logCookies(cookieObj: ICookieObject) {
+    console.log("the cookies selected: ", cookieObj);
+  }
 
   return (
     <main>
-      <CookieBanner
-        headingColor={"white"}
-        containerStyle={containerStyle}
+      <CookieModal
+        // containerStyle={containerStyle}
         enableManagement={true}
-        infoContent={<CookieInfoContent />}
-        onAccept={() => console.log("accepted cookies")}
+        onAccept={(obj) => console.log("Cookies accepted: ", obj)}
         onDecline={() => console.log("declined cookies")}
+        cookieCategories={["analytics", "advertisement", "social media"]}
       />
     </main>
   );

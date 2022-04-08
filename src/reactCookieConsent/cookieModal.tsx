@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { View } from "./global";
+import { View } from "./components/view";
 import { TextWrapper, FlexDiv, Container } from "./components/styledComponents";
 import { useShowCookieConsent } from "./util/useShowCC";
 

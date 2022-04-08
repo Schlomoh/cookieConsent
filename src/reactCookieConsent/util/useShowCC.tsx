@@ -1,9 +1,13 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import CookieUtil from "./cookieUtil";
 
 export const useShowCookieConsent = () => {
   const [show, setShow] = useState(false);
+  let cookiesExist = false;
+  const cookieObj = CookieUtil.readCookies();
+  if (cookieObj != undefined) cookiesExist = true;
+  console.log(cookieObj);
 
-  const cookiesExist = false;
   useEffect(() => {
     if (!cookiesExist) {
       setShow(true);

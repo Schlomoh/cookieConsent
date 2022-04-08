@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+const insertHover = (css: string) => `
+    @media (hover: hover) {
+            :hover {
+                ${css}
+            }
+        }
+    `;
+
 export const FlexDiv = styled.div<IFlexDivProps>`
   display: flex;
   flex-direction: ${(props) =>
@@ -38,6 +46,7 @@ export const Banner = styled(Container)<IAnimatedContainerProps>`
 `;
 
 export const BaseButton = styled.button<IBaseButtonProps>`
+  --background-color: ${(props) => props.backgroundColor};
   min-width: ${(props) => (props.small ? "80px" : "100%")};
   min-height: 40px;
   font-weight: bold;
@@ -48,7 +57,8 @@ export const BaseButton = styled.button<IBaseButtonProps>`
   padding: 10px 15px;
   margin: ${(props) => (props.small ? "15px 0 0 15px" : "15px 0 0")};
   background-color: ${(props) =>
-    props.backgroundColor ? props.backgroundColor : "#ccc"};
+    props.backgroundColor ? "var(--background-color)" : "#aaa"};
+  ${insertHover("filter: brightness(115%)")}
 `;
 
 export const TextWrapper = styled.span<ITextProps>`

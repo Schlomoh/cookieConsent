@@ -1,4 +1,4 @@
-import { View } from "./global";
+import { View } from "./components/view";
 import { TextWrapper, Banner, Padding } from "./components/styledComponents";
 import { useShowCookieConsent } from "./util/useShowCC";
 
