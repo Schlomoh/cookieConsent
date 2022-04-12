@@ -6,7 +6,6 @@ export const useShowCookieConsent = () => {
   let cookiesExist = false;
   const cookieObj = CookieUtil.readCookies();
   if (cookieObj != undefined) cookiesExist = true;
-  console.log(cookieObj);
 
   useEffect(() => {
     if (!cookiesExist) {

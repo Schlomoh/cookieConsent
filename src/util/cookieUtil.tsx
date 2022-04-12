@@ -1,3 +1,5 @@
+import { ICookieObject } from "../components/globalTypes";
+
 class CookieUtil {
   static createCookieObj(selection: string[], all?: string[]): ICookieObject {
     return all?.reduce((accu: any, cookie) => {

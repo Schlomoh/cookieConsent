@@ -1,6 +1,8 @@
-import { View } from "./components/view";
-import { TextWrapper, Banner, Padding } from "./components/styledComponents";
-import { useShowCookieConsent } from "./util/useShowCC";
+import View from "../View";
+import { TextWrapper, Banner, Padding } from "../styledComponents";
+import { useShowCookieConsent } from "../../util/useShowCC";
+
+import { ICookieConsentProps } from "../globalTypes";
 
 const CookieBanner = (props: ICookieConsentProps) => {
   const { headingColor, paragraphColor, containerStyle } = props;

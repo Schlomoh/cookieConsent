@@ -1,4 +1,27 @@
-import { BaseButton, FlexDiv } from "./styledComponents";
+import { IButtonTexts } from "../globalTypes";
+import {
+  BaseButton,
+  FlexDiv,
+  IButtonStyle,
+  TBackgroundColor,
+} from "../styledComponents";
+
+export interface IButtonGroupProps extends IButtonTexts, IButtonStyle {
+  callbacks: {
+    accept: (all?: boolean) => void;
+    decline: () => void;
+  };
+  toggleManageViewCallback: () => void;
+  showManagementView: boolean;
+  enableManagement?: boolean;
+  accentColor?: TBackgroundColor;
+  direction: "column" | "row";
+}
+
+interface IDynButtonProps {
+  children: any;
+  onClick: () => void;
+}
 
 const ButtonGroup = (props: IButtonGroupProps) => {
   const {

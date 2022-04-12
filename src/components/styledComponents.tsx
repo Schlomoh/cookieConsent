@@ -1,5 +1,38 @@
 import styled from "styled-components";
 
+type TCss = React.CSSProperties;
+
+export type TBackgroundColor = TCss["backgroundColor"];
+type TColor = TCss["color"];
+type TFlexDirection = TCss["flexDirection"];
+type TJustify = TCss["justifyContent"];
+type TAlign = TCss["alignItems"];
+
+interface IFlexDivProps {
+  flexDirection?: TFlexDirection;
+  justify?: TJustify;
+  align?: TAlign;
+}
+
+interface IBaseButtonProps {
+  backgroundColor?: TBackgroundColor;
+  small?: boolean;
+}
+
+export interface IButtonStyle {
+  primaryButtonStyle?: TCss;
+  secondaryButtonStyle?: TCss;
+}
+
+export interface ITextProps {
+  headingColor?: TColor;
+  paragraphColor?: TColor;
+}
+
+export interface IAnimatedContainerProps {
+  show: boolean;
+}
+
 const insertHover = (css: string) => `
     @media (hover: hover) {
             :hover {

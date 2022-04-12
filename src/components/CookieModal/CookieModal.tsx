@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { View } from "./components/view";
-import { TextWrapper, FlexDiv, Container } from "./components/styledComponents";
-import { useShowCookieConsent } from "./util/useShowCC";
+import View from "../View";
+import { TextWrapper, FlexDiv, Container, IAnimatedContainerProps } from "../styledComponents";
+import { useShowCookieConsent } from "../../util/useShowCC";
+import { ICookieConsentProps } from "../globalTypes";
 
 const Backdrop = styled(FlexDiv)<IAnimatedContainerProps>`
   z-index: 500;
@@ -19,7 +20,7 @@ const Backdrop = styled(FlexDiv)<IAnimatedContainerProps>`
 const CookieModal = (props: ICookieConsentProps) => {
   const { headingColor, paragraphColor, containerStyle } = props;
 
-  const [show, setShow] = useShowCookieConsent()
+  const [show, setShow] = useShowCookieConsent();
 
   return (
     <Backdrop show={show}>
@@ -28,7 +29,7 @@ const CookieModal = (props: ICookieConsentProps) => {
           headingColor={headingColor}
           paragraphColor={paragraphColor}
         >
-          <View {...props} setShow={setShow} type='modal' />
+          <View {...props} setShow={setShow} type="modal" />
         </TextWrapper>
       </Container>
     </Backdrop>

@@ -1,4 +1,4 @@
-export const defaultInfoContent = (
+const defaultInfoContent = (
   <>
     <h3>This site uses Cookies.</h3>
     <p>
@@ -10,7 +10,7 @@ export const defaultInfoContent = (
   </>
 );
 
-export const defaultManageContent = (
+const defaultManageContent = (
   <>
     <h3>Manage your cookie settings.</h3>
     <p>
@@ -20,8 +20,16 @@ export const defaultManageContent = (
     </p>
   </>
 );
+const defaultAcceptBtnText = "Accept";
+const defaultDeclineBtnText = "Decline";
+const defaultManageBtnText = "Manage Cookies";
+const defaultAccentColor = "coral";
 
-export const defaultAcceptBtnText = "Accept";
-export const defaultDeclineBtnText = "Decline";
-export const defaultManageBtnText = "Manage Cookies";
-export const defaultAccentColor = "coral";
+export {
+  defaultAccentColor,
+  defaultAcceptBtnText,
+  defaultDeclineBtnText,
+  defaultInfoContent,
+  defaultManageBtnText,
+  defaultManageContent,
+};

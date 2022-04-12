@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { BaseButton, FlexDiv } from "./styledComponents";
-import ButtonGroup from "./buttonGroup";
+import { Dispatch, SetStateAction, useState } from "react";
+import { BaseButton, FlexDiv } from "../styledComponents";
+import ButtonGroup, { IButtonGroupProps } from "../ButtonGroup";
 import {
   defaultAcceptBtnText,
   defaultManageBtnText,
@@ -8,11 +8,19 @@ import {
   defaultInfoContent,
   defaultManageContent,
   defaultDeclineBtnText,
-} from "./defaultContent";
-import CookieSelection from "./cookieSelection";
-import CookieUtil from "../util/cookieUtil";
+} from "../defaultContent";
+import CookieSelection from "../CookieSelection";
+import CookieUtil from "../../util/cookieUtil";
+import { ICookieConsentProps, ICookieObject } from "../globalTypes";
 
-export const View = (props: IViewProps) => {
+interface IViewProps extends ICookieConsentProps {
+  setShow: Dispatch<SetStateAction<boolean>>;
+  type: "banner" | "modal";
+}
+
+type TButtonClickCallback = (() => void) | undefined;
+
+const View = (props: IViewProps) => {
   //states
   const [showMangeView, setShowManageView] = useState(false);
   const [selection, setSelection] = useState<string[]>([]);
@@ -70,7 +78,7 @@ export const View = (props: IViewProps) => {
   }
 
   // wither a cookie category array was given or not
-  // depending it sets a cookie with either '"all": false' 
+  // depending it sets a cookie with either '"all": false'
   // or the specific categories set to false
   function decline() {
     if (cookieCategories) {
@@ -131,3 +139,5 @@ export const View = (props: IViewProps) => {
 
   return showMangeView ? <ManagementView /> : <InfoView />;
 };
+
+export default View;

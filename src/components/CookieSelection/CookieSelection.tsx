@@ -1,12 +1,18 @@
-import {
-  ChangeEvent,
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useState,
-} from "react";
+import { ChangeEvent, Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
-import { FlexDiv } from "./styledComponents";
+import { FlexDiv } from "../styledComponents";
+
+interface ISelectionProp {
+  selection: { get: string[]; set: Dispatch<SetStateAction<string[]>> };
+}
+
+export interface ICookieSelectionProps extends ISelectionProp {
+  categories?: string[];
+}
+
+interface ISelectorCheckboxProps extends ISelectionProp {
+  category: string;
+}
 
 const SelectorWrapper = styled(FlexDiv)`
   padding: 10px;
