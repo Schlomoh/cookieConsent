@@ -1,6 +1,6 @@
 # React-cookieConsent
 
-## This cookie consent react component aims to provide a fully customizable banner or modal to be displayed once your site is visited
+## This cookie consent react component aims to provide a fully customizable banner or modal
 
 ##### Currently the modal is the only available type.
 #
