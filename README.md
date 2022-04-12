@@ -2,18 +2,16 @@
 
 ## This cookie consent react library provides you with a fully customizable banner or modal
 
-<br><br>
+<br>
 
 ![Downloads](https://img.shields.io/npm/v/@schlomoh/react-cookieconsent)
-
-[![NPM](https://nodei.co/npm-dl/@schlomoh/react-cookiConsent.png?months=1)](https://nodei.co/npm/@schlomoh/react-cookieConsent/)
-
 
 ## Installation 
 ```shell
 npm install @schlomoh/react-cookieConsent
 ```
-<br><br>
+
+<br>
 
 ## Appearance
 
@@ -25,11 +23,12 @@ npm install @schlomoh/react-cookieConsent
 ### Default cookie Modal
 ![example](https://github.com/schlomoh/cookieConsent/blob/main/doc-assets/cookieModal.jpg?raw=true)
 
-<br><br>
+<br>
 
 ## Usage
 
 You can either use the Banner right out of the box without setting any properties or completely customize either one of the consent components in your own taste.  
+
 <br>
 
 ### Cookie modal
@@ -44,10 +43,12 @@ const MyApp = () => (
     </>
 )
 ```
+
 <br>
 
 ### Cookie banner
 #### Basic
+
 ```jsx
 import {CookieBanner} from '@schlomoh/react-cookieConsent'
 
@@ -58,10 +59,13 @@ const MyApp = () => (
     </>
 )
 ```
+
 <br>
 
-#### Customized 
+#### Customized
+
 <strong>(all properties work for both modal and banner)</strong>
+
 ```jsx
 ...
 
@@ -94,12 +98,14 @@ const MyApp = () => (
 )
 
 ```
+
 <br>
 
 ### Preview
+
 ![example](https://github.com/schlomoh/cookieConsent/blob/main/doc-assets/customBanner.jpg?raw=true)
 
-<br><br>
+<br>
 
 ## Management
 ### Selecting cookie preferences
@@ -123,17 +129,18 @@ When ```enableManagement``` is set you can also override the default text of the
 <br>
 
 ### Preview of the management view
+
 ![example](https://github.com/schlomoh/cookieConsent/blob/main/doc-assets/managementView.jpg?raw=true)
 
-<br><br>
+<br>
 
 ## Callbacks
+
 You can define the callbacks which are called on either accept or decline. Simply pass a function into the ```onAccept``` or ```onDecline``` property which gets executed accordingly.
 
 The ```onAccept``` event can pass an object with the selected cookies as ```ICookieObject``` into your accept callback. 
 
 ```jsx
-
 const onAccept = (cookies : ICookieObject) => {
     console.log(cookies);
 };
@@ -152,7 +159,7 @@ const App = () => (
 )
 ```
 
-<br><br>
+<br>
 
 ## Properties
 
