@@ -38,8 +38,8 @@ const insertHover = (css: string) => `
             :hover {
                 ${css}
             }
-        }
-    `;
+    }
+`
 
 export const FlexDiv = styled.div<IFlexDivProps>`
   display: flex;

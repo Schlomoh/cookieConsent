@@ -1,1 +1,1 @@
-export {default} from './CookieModal'
+export { default } from "./CookieModal";
