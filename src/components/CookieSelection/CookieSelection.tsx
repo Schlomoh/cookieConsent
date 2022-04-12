@@ -23,7 +23,7 @@ const SelectorWrapper = styled(FlexDiv)`
 `;
 
 const SelectorCheckbox = ({ category, selection }: ISelectorCheckboxProps) => {
-  const isNecessary = category === "necessary";
+  const isNecessary = category === "Necessary";
   //   const [active, setActiv] = useState(isNecessary);
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
@@ -56,8 +56,8 @@ const SelectorCheckbox = ({ category, selection }: ISelectorCheckboxProps) => {
 
 const CookieSelection = ({ categories, selection }: ICookieSelectionProps) => {
   const allCategories = categories
-    ? ["necessary", ...categories]
-    : ["necessary"];
+    ? ["Necessary", ...categories]
+    : ["Necessary"];
 
   const checkboxes = allCategories.map((category, i) => {
     return (
