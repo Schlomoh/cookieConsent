@@ -95,7 +95,7 @@ export const BaseButton = styled.button<IBaseButtonProps>`
 `;
 
 export const TextWrapper = styled.span<ITextProps>`
-  h3 {
+  h1, h2, h3, h4 {
     color: ${(props) => (props.headingColor ? props.headingColor : "black")};
   }
 
