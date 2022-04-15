@@ -27,7 +27,7 @@ npm install @schlomoh/react-cookieConsent
 
 ## Usage
 
-You can either use the Banner right out of the box without setting any properties or completely customize either one of the consent components in your own taste.  
+You can either use the components right out of the box without setting any properties or completely customize either one of the consent components in your own taste.  
 
 <br>
 
