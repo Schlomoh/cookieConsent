@@ -3,8 +3,8 @@ import CookieUtil from "./cookieUtil";
 
 export const useShowCookieConsent = () => {
   const [show, setShow] = useState(false);
-  let cookiesExist = false;
   const cookieObj = CookieUtil.readCookies();
+  let cookiesExist = false;
   if (cookieObj != undefined) cookiesExist = true;
 
   useEffect(() => {

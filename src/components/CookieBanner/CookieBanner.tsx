@@ -1,5 +1,5 @@
 import View from "../View";
-import { TextWrapper, Banner, Padding } from "../styledComponents";
+import { TextWrapper, Banner } from "../styledComponents";
 import { useShowCookieConsent } from "../../util/useShowCC";
 
 import { ICookieConsentProps } from "../globalTypes";
@@ -11,14 +11,14 @@ const CookieBanner = (props: ICookieConsentProps) => {
 
   return (
     <Banner style={containerStyle} show={show}>
-      <Padding>
+
         <TextWrapper
           headingColor={headingColor}
           paragraphColor={paragraphColor}
         >
           <View {...props} setShow={setShow} type="banner" />
         </TextWrapper>
-      </Padding>
+
     </Banner>
   );
 };

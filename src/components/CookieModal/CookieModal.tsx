@@ -5,7 +5,7 @@ import { useShowCookieConsent } from "../../util/useShowCC";
 import { ICookieConsentProps } from "../globalTypes";
 
 const Backdrop = styled(FlexDiv)<IAnimatedContainerProps>`
-  z-index: 500;
+  z-index: 1000;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.3);
   width: 100vw;

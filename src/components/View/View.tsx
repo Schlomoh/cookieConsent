@@ -124,7 +124,11 @@ const View = (props: IViewProps) => {
     <BaseView>
       <>
         <FlexDiv align={"end"}>
-          <BaseButton style={{ margin: 0 }} small onClick={toggleManageView}>
+          <BaseButton
+            style={{ ...props.secondaryButtonStyle, margin: 0 }}
+            small
+            onClick={toggleManageView}
+          >
             Back
           </BaseButton>
         </FlexDiv>

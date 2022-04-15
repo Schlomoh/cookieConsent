@@ -37,9 +37,9 @@ const insertHover = (css: string) => `
     @media (hover: hover) {
             :hover {
                 ${css}
-            }
+            };
     }
-`
+`;
 
 export const FlexDiv = styled.div<IFlexDivProps>`
   display: flex;
@@ -49,11 +49,8 @@ export const FlexDiv = styled.div<IFlexDivProps>`
   align-items: ${(props) => (props.align ? props.align : "center")};
 `;
 
-export const Padding = styled.div`
+export const Container = styled.div`
   padding: 30px;
-`;
-
-export const Container = styled(Padding)`
   max-width: 500px;
   margin: 30px;
   border-radius: 20px;
@@ -65,11 +62,11 @@ export const Container = styled(Padding)`
 export const Banner = styled(Container)<IAnimatedContainerProps>`
   max-width: 100vw;
   width: 100vw;
+  z-index: 1000;
   position: fixed;
   left: 0;
   bottom: 0;
   border-radius: 0;
-  padding: 0;
   margin: 0;
   box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.2);
   transform: ${(props) =>
@@ -91,11 +88,15 @@ export const BaseButton = styled.button<IBaseButtonProps>`
   margin: ${(props) => (props.small ? "15px 0 0 15px" : "15px 0 0")};
   background-color: ${(props) =>
     props.backgroundColor ? "var(--background-color)" : "#aaa"};
-  ${insertHover("filter: brightness(115%)")}
+  ${insertHover("filter: brightness(120%)")};
+  transition: filter .4s;
 `;
 
 export const TextWrapper = styled.span<ITextProps>`
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     color: ${(props) => (props.headingColor ? props.headingColor : "black")};
   }
 
