@@ -22,13 +22,20 @@ type TButtonClickCallback = (() => void) | undefined;
 
 const View = (props: IViewProps) => {
   //states
-  const [showMangeView, setShowManageView] = useState(false);
-  const [selection, setSelection] = useState<string[]>([]);
-
-  // gettinh the states set method from the parent passed down as prop
-  const setShow = props.setShow;
-  // property constants
-  const { onAccept, onDecline, type, cookieCategories } = props;
+  const [showMangeView, setShowManageView] = useState(false),
+    [selection, setSelection] = useState<string[]>([]),
+    // gettinh the states set method from the parent passed down as prop
+    setShow = props.setShow,
+    // property constants
+    {
+      onAccept,
+      onDecline,
+      type,
+      enableManagement,
+      cookieCategories,
+      primaryButtonStyle,
+      secondaryButtonStyle,
+    } = props;
   // properties that get set with a default when not set by the user
   let { accentColor, infoContent, managementContent } = props;
   let { managementButtonText, acceptButtonText, declineButtonText } = props;
@@ -89,31 +96,33 @@ const View = (props: IViewProps) => {
     buttonClick(onDecline);
   }
 
-  // an object of props to be passed into the button group component
-  // these establish the look and arragement of the buttons and provide the callbacks
-  const buttonGroupProps = {
-    toggleManageViewCallback: toggleManageView,
-    showManagementView: showMangeView,
-    primaryButtonStyle: props.primaryButtonStyle,
-    secondaryButtonStyle: props.secondaryButtonStyle,
-    enableManagement: props.enableManagement,
-    managementButtonText: managementButtonText,
-    acceptButtonText: acceptButtonText,
-    declineButtonText: declineButtonText,
-    accentColor: accentColor,
-    direction: direction,
-    callbacks: {
-      accept: accept,
-      decline: decline,
-    },
-  } as IButtonGroupProps;
+  const BaseView = ({ children }: { children: JSX.Element | undefined }) => {
+    // an object of props to be passed into the button group component
+    // these establish the look and arragement of the buttons and provide the callbacks
+    const buttonGroupProps = {
+      toggleManageViewCallback: toggleManageView,
+      showManagementView: showMangeView,
+      primaryButtonStyle: primaryButtonStyle,
+      secondaryButtonStyle: secondaryButtonStyle,
+      enableManagement: enableManagement,
+      managementButtonText: managementButtonText,
+      acceptButtonText: acceptButtonText,
+      declineButtonText: declineButtonText,
+      accentColor: accentColor,
+      direction: direction,
+      callbacks: {
+        accept: accept,
+        decline: decline,
+      },
+    } as IButtonGroupProps;
 
-  const BaseView = ({ children }: { children: JSX.Element | undefined }) => (
-    <>
-      {children}
-      <ButtonGroup {...buttonGroupProps} />
-    </>
-  );
+    return (
+      <>
+        {children}
+        <ButtonGroup {...buttonGroupProps} />
+      </>
+    );
+  };
 
   // the view one is greeted with
   const InfoView = () => <BaseView>{infoContent}</BaseView>;

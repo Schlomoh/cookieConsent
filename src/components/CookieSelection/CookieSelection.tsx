@@ -6,7 +6,7 @@ interface ISelectionProp {
   selection: { get: string[]; set: Dispatch<SetStateAction<string[]>> };
 }
 
-export interface ICookieSelectionProps extends ISelectionProp {
+interface ICookieSelectionProps extends ISelectionProp {
   categories?: string[];
 }
 

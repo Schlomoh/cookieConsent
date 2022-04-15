@@ -1,5 +1,6 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
+import { getBabelOutputPlugin } from "@rollup/plugin-babel";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import { terser } from "rollup-plugin-terser";
@@ -35,11 +36,12 @@ export default [
         tsconfig: "./tsconfig.json",
         // transformers: [() => ({ before: [styledComponentsTransformer] })],
       }),
-      terser(),
+      getBabelOutputPlugin({
+        presets: ["@babel/preset-env", "@babel/preset-react"],
+      }),
+      terser({compress: true, format: { comments: false } }),
     ],
-    external: ["react", "react-dom", 
-    "styled-components"
-  ],
+    external: ["react", "react-dom", "styled-components"],
   },
   {
     input: "dist/esm/types/index.d.ts",
