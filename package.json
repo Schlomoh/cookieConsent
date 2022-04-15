@@ -1,6 +1,6 @@
 {
   "name": "@schlomoh/react-cookieconsent",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Cookie consent components written in typescript and react. Usable with only one line of code.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
