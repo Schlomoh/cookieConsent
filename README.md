@@ -8,16 +8,16 @@ This react cookie consent library provides you with a fully customizable banner 
 ![Downloads](https://img.shields.io/npm/v/@schlomoh/react-cookieconsent)
 
 
-- [Installation 🧑🏽‍💻](#installation)
-- [Features ✨](#features)
-- [Preview 👀](#preview)
-- [Usage / Examples ✏️](#usageexamples)
-    - [Cookie modal 💚](#cookie-modal)
-    - [Cookie banner 💙](#cookie-banner)
-    - [Customizing 📐](#customized)
-    - [Cookie Preferences 🔧](#enabling-cookie-preferences)
-    - [Callbacks 👉🏼](#callbacks)
-- [Type reference 🔎](#reference)
+- [Installation 🧑🏽‍💻](#installation-🧑🏽‍💻)
+- [Features ✨](#features-✨)
+- [Preview 👀](#preview-👀)
+- [Usage / Examples ✏️](#usage--examples-✏️)
+    - [Cookie modal 💚](#cookie-modal-💚)
+    - [Cookie banner 💙](#cookie-banner-💙)
+    - [Customizing 📐](#customized-📐)
+    - [Cookie Preferences 🔧](#enabling-cookie-preferences-🔧)
+    - [Callbacks 👉🏼](#callbacks-👉🏼)
+- [Type reference 🔎](#reference-🔎)
 
 ## Installation 🧑🏽‍💻
 
