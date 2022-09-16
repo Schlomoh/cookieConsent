@@ -1,40 +1,59 @@
+
 # React-cookieConsent
 
-## This cookie consent react library provides you with a fully customizable banner or modal
+This react cookie consent library provides you with a fully customizable banner or modal
 
-<br>
 
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 ![Downloads](https://img.shields.io/npm/v/@schlomoh/react-cookieconsent)
 
-## Installation 
-```shell
-npm install @schlomoh/react-cookieConsent
+
+- [Installation](#installation) 🧑🏽‍💻
+- [Features](#features) ✨
+- [Preview](#preview) 👀
+- [Usage / Examples](#usageexamples) ✏️
+    - [Cookie modal](#cookie-modal) 💚
+    - [Cookie banner](#cookie-banner) 💙
+    - [Customizing](#customized) 📐
+    - [Cookie Preferences](#enabling-cookie-preferences) 🔧
+    - [Callbacks](#callbacks) 👉🏼
+- [Type reference](#reference) 🔎
+
+## Installation 🧑🏽‍💻
+
+Install the component library using:
+
+```zsh
+  npm install @schlomoh/react-cookieConsent
 ```
+    
+## Features ✨
 
-<br>
+- Two seperate components (modal and banner)
+- Fully customizable via css
+- Define custom text to inform the user
+- Pass in callbacks for denial and acception
+- Enable or disable cookie preferences
 
-## Appearance
 
-### Default cookie banner
+## Preview 👀
+
+ Default cookie banner
+
 ![example](https://github.com/schlomoh/cookieConsent/blob/main/doc-assets/cookieBanner.jpg?raw=true)
 
-<br>
+Default cookie Modal
 
-### Default cookie Modal
 ![example](https://github.com/schlomoh/cookieConsent/blob/main/doc-assets/cookieModal.jpg?raw=true)
 
-<br>
-
-## Usage
+## Usage / Examples ✏️
 
 You can either use the components right out of the box without setting any properties or completely customize either one of the consent components in your own taste.  
 
-<br>
-
-### Cookie modal
+### Cookie modal 💚
 #### Basic
 ```jsx
-import {CookieModal} from '@schlomoh/react-cookieConsent'
+import { CookieModal } from '@schlomoh/react-cookieConsent'
 
 const MyApp = () => (
     <>
@@ -43,14 +62,11 @@ const MyApp = () => (
     </>
 )
 ```
-
-<br>
-
-### Cookie banner
+### Cookie banner 💙
 #### Basic
 
 ```jsx
-import {CookieBanner} from '@schlomoh/react-cookieConsent'
+import { CookieBanner } from '@schlomoh/react-cookieConsent'
 
 const MyApp = () => (
     <>
@@ -59,12 +75,9 @@ const MyApp = () => (
     </>
 )
 ```
+#### Customized 📐
 
-<br>
-
-#### Customized
-
-<strong>(all properties work for both modal and banner)</strong>
+*(All properties work for both modal and banner)*
 
 ```jsx
 ...
@@ -99,28 +112,24 @@ const MyApp = () => (
 
 ```
 
-<br>
-
-### Preview
+... it then looks like this (*dont mind the text👀 earlier screenshot*): 
 
 ![example](https://github.com/schlomoh/cookieConsent/blob/main/doc-assets/customBanner.jpg?raw=true)
 
-<br>
+### Enabling cookie preferences 🔧
 
-## Management
-### Selecting cookie preferences
+To let a visitor select their cookie preferences the property `enableManagement` has to be set to `true`.
 
-To let a visitor select their cookie preferences the property ```enableManagement``` has to be set to ```true```.
+You can then set an array of cookie categories which the user can select from. There is always the category "Necessary" predefined and set to `true` and `disabled` by default.
 
-You can then set an array of cookie categories which the user can select from. There is always the category "Necessary" predefined and set to ```true``` and ```disabled``` by default.
+When `enableManagement` is set you can also override the default text of the button by setting `managementButtonText='whatever'`. This button is a secondary button.
 
-When ```enableManagement``` is set you can also override the default text of the button by setting ```managementButtonText='whatever'```. This button is a secondary button.
-
+For example
 ```jsx
 <>
     <CookieBanner
         enableManagement
-        managementButtonText='whatever'
+        managementButtonText='manage cookie preferences'
         cookieCategories={['analytics', 'advertisement']}
     />
 </>
@@ -128,17 +137,16 @@ When ```enableManagement``` is set you can also override the default text of the
 
 <br>
 
-### Preview of the management view
-
 ![example](https://github.com/schlomoh/cookieConsent/blob/main/doc-assets/managementView.jpg?raw=true)
 
-<br>
 
-## Callbacks
 
-You can define the callbacks which are called on either accept or decline. Simply pass a function into the ```onAccept``` or ```onDecline``` property which gets executed accordingly.
 
-The ```onAccept``` event can pass an object with the selected cookies as ```ICookieObject``` into your accept callback. 
+### Callbacks 👉🏼
+
+You can define callbacks which are called on either accept or decline. Simply pass a function into the ```onAccept``` or ```onDecline``` property which is executed accordingly.
+
+The `onAccept` event can pass an object with the selected cookies as `ICookieObject` into your accept callback. 
 
 ```jsx
 const onAccept = (cookies : ICookieObject) => {
@@ -149,7 +157,9 @@ const onDecline = () => {
     console.log('declined');
 }
 
-const App = () => (
+
+// inside your app
+const MyApp = () => (
     <>
         <CookieBanner
         onAccept={onAccept} 
@@ -159,13 +169,11 @@ const App = () => (
 )
 ```
 
-<br>
-
-## Properties
+## Reference 🔎
 
 The `ICookieObject`:
 ```ts
-    interface ICookieObject {
+interface ICookieObject {
   [key: string]: boolean;
 }
 ```
