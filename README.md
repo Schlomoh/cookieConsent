@@ -163,6 +163,18 @@ const App = () => (
 
 ## Properties
 
+The `ICookieObject`:
+```ts
+    interface ICookieObject {
+  [key: string]: boolean;
+}
+```
+
+Example: 
+```ts
+{ "advertisement": false, "analytics": true }
+```
+
 <table>
     <tr>
         <th>Prop</th>
