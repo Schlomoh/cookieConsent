@@ -12,9 +12,23 @@ This react cookie consent library provides you with a fully customizable banner 
 Install the component library using:
 
 ```zsh
-  npm install @schlomoh/react-cookieConsent
+  npm install @schlomoh/react-cookieconsent
 ```
-    
+or
+
+```zsh
+  yarn add @schlomoh/react-cookieconsent
+```
+
+You'll also need to install styled-components
+
+```zsh
+  npm install styled-components
+```
+```zsh
+  yarn add styled-components
+```
+
 ## Features ✨
 
 - Two seperate components (modal and banner)
@@ -41,7 +55,7 @@ You can either use the components right out of the box without setting any prope
 ### Cookie modal 💚
 #### Basic
 ```jsx
-import { CookieModal } from '@schlomoh/react-cookieConsent'
+import { CookieBanner } from '@schlomoh/react-cookieConsent'
 
 const MyApp = () => (
     <>
@@ -54,7 +68,7 @@ const MyApp = () => (
 #### Basic
 
 ```jsx
-import { CookieBanner } from '@schlomoh/react-cookieConsent'
+import { CookieModal } from '@schlomoh/react-cookieConsent'
 
 const MyApp = () => (
     <>
@@ -270,3 +284,84 @@ Example:
     </tr>
 
 </table>
+
+
+## Sample usage in a NextJs project
+
+1. Make a component named Cookie.tsx in your components folder with the following content.
+```tsx
+'use client';
+
+import { CookieBanner } from '@schlomoh/react-cookieconsent';
+import React from 'react';
+
+const MyCookieBanner = () => {
+    const Content = () => (
+        <>
+            <h3>Life is better with cookies 🍪</h3>
+            <p>This website uses cookies to improve your experience. We’ll assume you’re ok with this, but you can opt out if you wish. <a href="/cookie" className='text-blue underline'>Cookie Policy</a></p>
+        </>
+    )
+
+    const MContent = () => (
+        <>
+            <h3>Manage your cookie settings.</h3>
+            <p>We use cookies and other tracking technologies to improve your experience on our website. We may store and/or access information on a device</p>
+        </>
+    )
+    
+    const containerStyle = {backgroundColor: 'white'};
+    const buttonStyle = {borderRadius: 0}
+    const primaryButtonStyle={...buttonStyle, backgroundColor:'green'}
+    const secondaryButtonStyle={...buttonStyle, backgroundColor:'red'}
+    
+  return (
+    <CookieBanner
+        acceptButtonText='I accept'
+        declineButtonText='Reject'
+        headingColor='black'
+        paragraphColor='grey'
+        containerStyle={containerStyle}
+        primaryButtonStyle={primaryButtonStyle}
+        secondaryButtonStyle={secondaryButtonStyle}
+        infoContent={<Content />}
+        enableManagement
+        managementContent={<MContent />}
+        managementButtonText='Consent Preferences'
+        cookieCategories={['analytics', 'advertisement']}
+        // accentColor = 'coral'
+    />
+  );
+};
+
+export default MyCookieBanner;
+ 
+```
+2. add the component it your App.js or _app,js or app/layout.js file
+```
+import CookieBanner from '@/components/Cookie'
+...
+
+...
+     
+        <ThemeProviders>
+          <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
+          <SectionContainer>
+            <div className="flex h-screen flex-col justify-between font-sans">
+              <SearchProvider>
+                <Header />               
+                <main className="mb-auto">{children}</main>
+              </SearchProvider>
+              <Footer />
+              <CookieBanner />
+            </div>
+          </SectionContainer>
+        </ThemeProviders>
+...
+```
+
+Here's how looks like:-
+![Screenshot 2024-07-02 at 9 55 45 PM](https://github.com/zriyansh/cookieConsent/assets/52788043/03107f9c-7498-4bd8-bf14-e398a83d104a)
+
+
+
