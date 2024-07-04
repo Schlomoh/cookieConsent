@@ -298,15 +298,15 @@ import React from 'react';
 const MyCookieBanner = () => {
     const Content = () => (
         <>
-            <h3>Life is better with cookies 🍪</h3>
-            <p>This website uses cookies to improve your experience. We’ll assume you’re ok with this, but you can opt out if you wish. <a href="/cookie" className='text-blue underline'>Cookie Policy</a></p>
+            <h3>Lorem ipsum Lorem ipsum</h3>
+            <p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum. <a href="/cookie" className='text-blue underline'>Cookie Policy</a></p>
         </>
     )
 
     const MContent = () => (
         <>
-            <h3>Manage your cookie settings.</h3>
-            <p>We use cookies and other tracking technologies to improve your experience on our website. We may store and/or access information on a device</p>
+            <h3>Lorem ipsumLorem ipsum.</h3>
+            <p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
         </>
     )
     
